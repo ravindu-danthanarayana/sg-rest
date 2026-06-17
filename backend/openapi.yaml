@@ -1,0 +1,30 @@
+openapi: 3.0.3
+info:
+  title: Sungreen Habarana Restaurant API
+  version: "1.0.0"
+servers:
+  - url: http://localhost:8080
+paths:
+  /api/menu:
+    get: { summary: List menu items, responses: { "200": { description: OK } } }
+    post: { summary: Create menu item (admin), security: [{ bearerAuth: [] }] }
+  /api/menu/{id}:
+    get: { summary: Get menu item }
+    put: { summary: Update menu item (admin), security: [{ bearerAuth: [] }] }
+    delete: { summary: Delete menu item (admin), security: [{ bearerAuth: [] }] }
+  /api/reservations:
+    post: { summary: Create reservation }
+    get: { summary: List reservations (admin), security: [{ bearerAuth: [] }] }
+  /api/reservations/{id}:
+    put: { summary: Update reservation status (admin), security: [{ bearerAuth: [] }] }
+    delete: { summary: Delete reservation (admin), security: [{ bearerAuth: [] }] }
+  /api/contact:
+    post: { summary: Send contact message }
+    get: { summary: List contact messages (admin), security: [{ bearerAuth: [] }] }
+  /api/auth/login:
+    post: { summary: Admin login (JWT) }
+  /api/auth/logout:
+    post: { summary: Logout }
+components:
+  securitySchemes:
+    bearerAuth: { type: http, scheme: bearer, bearerFormat: JWT }

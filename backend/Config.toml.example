@@ -1,0 +1,8 @@
+# Sample config — copy to Config.toml and edit
+DB_HOST = "mysql"
+DB_PORT = 3306
+DB_USER = "sungreen"
+DB_PASS = "sungreen_pw"
+DB_NAME = "sungreen"
+JWT_SECRET = "please-change-this-to-a-long-random-string"
+JWT_TTL_SECONDS = 3600
